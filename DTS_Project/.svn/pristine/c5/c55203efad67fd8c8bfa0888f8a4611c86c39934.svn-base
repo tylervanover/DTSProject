@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace DTS_Project
+{
+    /// <summary>
+    /// Created: Mar 31, 2013 by Tyler Vanover
+    /// 
+    /// Description: Tenant level operations for the
+    /// administrator. 
+    /// </summary>
+    public partial class TenantMenuDialog : Form
+    {
+        private Tenant _tenant;
+
+        public TenantMenuDialog()
+        {
+            InitializeComponent();
+        }
+
+        public TenantMenuDialog(ref Tenant tenant)
+            :this()
+        {
+            _tenant = tenant;
+        }
+
+        private void btnBarAreaCode_Click(object sender, EventArgs e)
+        {
+            AreaCodeDialog areaCodeDiag = new AreaCodeDialog();
+            if (areaCodeDiag.ShowDialog() == DialogResult.OK)
+            {
+                _tenant.MakeBarred(new BarArea(areaCodeDiag.AreaCode));
+            }
+        }
+
+        private void btnBarNumber_Click(object sender, EventArgs e)
+        {
+            TelephoneDialog telly = new TelephoneDialog();
+            if (telly.ShowDialog() == DialogResult.OK)
+            {
+                _tenant.MakeBarred(new BarFullNumber(new Number(telly.TelephoneNumber)));
+            }
+        }
+
+        private void btnUnbarArea_Click(object sender, EventArgs e)
+        {
+            AreaCodeDialog areaCodeDiag = new AreaCodeDialog();
+            string [] number = new string[3];
+            if (areaCodeDiag.ShowDialog() == DialogResult.OK)
+            {
+                number[0] = areaCodeDiag.AreaCode;
+                _tenant.Unbar(new Number(number));
+            }
+        }
+
+        private void btnUnbarNumber_Click(object sender, EventArgs e)
+        {
+            TelephoneDialog telly = new TelephoneDialog();
+            if (telly.ShowDialog() == DialogResult.OK)
+            {
+                _tenant.Unbar(new Number(telly.TelephoneNumber));
+            }
+        }
+
+        private void btnListBar_Click(object sender, EventArgs e)
+        {
+            _tenant.ListBarred();
+        }
+
+        private void btnListCalls_Click(object sender, EventArgs e)
+        {
+            _tenant.ListCalls();
+        }
+
+        private void btnClearCalls_Click(object sender, EventArgs e)
+        {
+            _tenant.ClearCallLog();
+        }
+    }
+}

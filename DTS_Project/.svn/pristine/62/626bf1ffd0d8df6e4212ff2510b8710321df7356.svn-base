@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DTS_Project
+{
+    [Serializable]
+    public class Number
+    {
+        private string _areaCode;
+        private string _exchange;
+        private string _subscriber;
+        private StringBuilder sb;
+
+        public Number(string [] number)
+        {
+            _areaCode = number[0];
+            _exchange = number[1];
+            _subscriber = number[2];
+            sb = new StringBuilder();
+        }
+
+        public override string ToString()
+        {
+            //Reset the builder
+            sb.Clear();
+
+            sb.Append(_areaCode); sb.Append("-");
+            sb.Append(_exchange); sb.Append("-");
+            sb.Append(_subscriber);
+
+            return sb.ToString();
+        }
+    }
+}

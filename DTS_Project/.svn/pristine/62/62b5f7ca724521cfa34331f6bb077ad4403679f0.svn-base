@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace DTS_Project
+{
+    public partial class DTS : Form
+    {
+        private Terminal _terminal;
+        private Telephone _telephone;
+
+        public DTS()
+        {
+            InitializeComponent();
+        }
+
+        private void DTS_Load(object sender, EventArgs e)
+        {
+            _terminal = new Terminal();
+            _telephone = new Telephone();
+        }
+
+        private void btnTerminal_Click(object sender, EventArgs e)
+        {
+            _terminal.Activate();
+        }
+
+        private void btnTelephone_Click(object sender, EventArgs e)
+        {
+            _telephone.Activate(ref _terminal);
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}

@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace DTS_Project
+{
+    public partial class LocateTenantDialog : Form
+    {
+        public LocateTenantDialog()
+        {
+            InitializeComponent();
+        }
+
+        public string FirstName
+        {
+            get
+            {
+                return tbFirst.Text.Trim();
+            }
+        }
+        public string LastName
+        {
+            get
+            {
+                return tbLast.Text.Trim();
+            }
+        }
+    }
+}

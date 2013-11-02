@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DTS_Project
+{
+    [Serializable]
+    public class Call
+    {
+        private Number _dialed;
+        private DateTime _placed;
+        private DateTime _ended;
+
+        public Call(Number dialed, DateTime placed, DateTime ended)
+        {
+            this._dialed = dialed;
+            this._placed = placed;
+            this._ended = ended;
+        }
+
+        public override string ToString()
+        {
+            return ("");
+        }
+    }
+}

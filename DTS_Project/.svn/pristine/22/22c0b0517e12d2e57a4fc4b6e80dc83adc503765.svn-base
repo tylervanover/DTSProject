@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DTS_Project
+{
+    [Serializable]
+    public class Call
+    {
+        private Number _dialed;
+        private DateTime _placed;
+        private DateTime _ended;
+        private StringBuilder sb;
+
+        public Call(Number dialed, DateTime placed, DateTime ended)
+        {
+            this._dialed = dialed;
+            this._placed = placed;
+            this._ended = ended;
+            sb = new StringBuilder();
+        }
+
+        public override string ToString()
+        {
+            //Reset the builder
+            sb.Clear();
+
+            sb.Append(_dialed.ToString());
+            sb.Append(" : "); sb.Append(_placed.ToString());
+            sb.Append(" -- "); sb.Append(_ended.ToString());
+
+            return sb.ToString();
+        }
+    }
+}

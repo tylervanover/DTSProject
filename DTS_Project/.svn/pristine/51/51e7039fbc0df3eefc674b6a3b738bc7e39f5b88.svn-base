@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace DTS_Project
+{
+    public partial class TenantMenuDialog : Form
+    {
+        private Tenant _tenant;
+
+        public TenantMenuDialog()
+        {
+            InitializeComponent();
+        }
+
+        public TenantMenuDialog(ref Tenant tenant)
+            :this()
+        {
+            _tenant = tenant;
+        }
+
+        private void btnBarAreaCode_Click(object sender, EventArgs e)
+        {
+            AreaCodeDialog areaCodeDiag = new AreaCodeDialog();
+            if (areaCodeDiag.ShowDialog() == DialogResult.OK)
+            {
+                _tenant.MakeBarred(new BarArea(areaCodeDiag.AreaCode));
+            }
+        }
+
+        private void btnBarNumber_Click(object sender, EventArgs e)
+        {
+            TelephoneDialog telly = new TelephoneDialog();
+            if (telly.ShowDialog() == DialogResult.OK)
+            {
+                _tenant.MakeBarred(new BarFullNumber(new Number(telly.TelephoneNumber)));
+            }
+        }
+
+        private void btnUnbarArea_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUnbarNumber_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListBar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListCalls_Click(object sender, EventArgs e)
+        {
+            _tenant.ListCalls();
+        }
+
+        private void btnClearCalls_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

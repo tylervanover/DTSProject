@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+
+namespace DTS_Project
+{
+    public partial class MainMenuDialog : Form
+    {
+        private Terminal _terminal;
+
+        public MainMenuDialog()
+        {
+            InitializeComponent();
+        }
+
+        public MainMenuDialog(Terminal terminal)
+            : this()
+        {
+            _terminal = terminal;
+        }
+
+        private void btnAddTenant_Click(object sender, EventArgs e)
+        {
+            _terminal.Add();
+        }
+
+        private void btnDeleteTenant_Click(object sender, EventArgs e)
+        {
+            _terminal.Delete();
+        }
+
+        private void btnListTenants_Click(object sender, EventArgs e)
+        {
+            _terminal.List();
+        }
+
+        private void btnWorkOn_Click(object sender, EventArgs e)
+        {
+            _terminal.WorkOn();
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            _terminal.ChangePassword();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            _terminal.Save();
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            _terminal.Restore();
+        }
+    }
+}

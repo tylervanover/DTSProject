@@ -1,0 +1,80 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DTS_Project
+{
+    [Serializable]
+    public class Tenant
+    {
+        private string _accessCode;
+        private string _first;
+        private string _last;
+        private List<Call> _callLog;
+        private List<Bar> _barredList;
+        private StringBuilder sb;
+
+        public Tenant(string code, string first, string last)
+        {
+            this._accessCode = code;
+            this._first = first;
+            this._last = last;
+            _callLog = new List<Call>();
+            _barredList = new List<Bar>();
+            sb = new StringBuilder();
+        }
+
+        public void ListCalls()
+        {
+            ListDialog listDiag = new ListDialog();
+            listDiag.AddDisplayItems(_callLog.ToArray());
+            listDiag.ShowDialog();
+        }
+
+        public void UpdateCallLog(Call call)
+        {
+            //Check for barred number first
+
+            //If not barred
+            //Add call to call log
+            _callLog.Add(call);
+        }
+
+        public override string ToString()
+        {
+            //Reset the builder
+            sb.Clear();
+
+            sb.Append(First); sb.Append(" ");
+            sb.Append(Last); sb.Append(" : ");
+            sb.Append(AccessCode);
+
+            return sb.ToString();
+        }
+
+        public string AccessCode
+        {
+            get
+            {
+                return _accessCode;
+            }
+        }
+
+        public string First
+        {
+            get
+            {
+                return _first;
+            }
+        }
+
+        public string Last
+        {
+            get
+            {
+                return _last;
+            }
+        }
+    }
+}

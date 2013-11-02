@@ -1,0 +1,142 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using DTS_Project;
+
+namespace DTS_Project
+{
+    [Serializable]
+    public class Terminal
+    {
+        private string _password;
+        private List<Tenant> _tenantList;
+        private Tenant _workingTenant;
+
+        public Terminal(string password = "ksu")
+        {
+            Password = password;
+            _tenantList = new List<Tenant>();
+        }
+
+        public void Activate()
+        {
+            PasswordDialog _passwordDialog = new PasswordDialog();
+            MainMenuDialog _mainMenu = new MainMenuDialog(this);
+            if (_passwordDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (VerifyPassword(_passwordDialog.Password))
+                {
+                    _mainMenu.ShowDialog();
+                }
+            }
+            _passwordDialog.Clean();
+        }
+
+        public void Add()
+        {
+            InputTenatDialog input = new InputTenatDialog();
+            if (input.ShowDialog() == DialogResult.OK)
+            {
+                this._tenantList.Add(new Tenant(input.AccessCode, input.FirstName, input.LastName));
+            }
+        }
+
+        public void Delete()
+        {
+            LocateTenantDialog locate = new LocateTenantDialog();
+            if (locate.ShowDialog() == DialogResult.OK)
+            {
+                Tenant t = _tenantList.Find(te => (te.First == locate.FirstName
+                                           && te.Last == locate.LastName));
+                if (t != null)
+                {
+                    _tenantList.RemoveAll(te => (te.First == locate.FirstName
+                                                && te.Last == locate.LastName));
+                }
+            }
+        }
+
+        public void List()
+        {
+            ListDialog listDiag = new ListDialog();
+            listDiag.AddDisplayItems(_tenantList.ToArray());
+            listDiag.ShowDialog();
+        }
+
+        public void WorkOn()
+        {
+            LocateTenantDialog locate = new LocateTenantDialog();
+            if (locate.ShowDialog() == DialogResult.OK)
+            {
+                Tenant t = _tenantList.Find(te => (te.First == locate.FirstName
+                                           && te.Last == locate.LastName));
+                //Add code to work on tenant
+                TenantMenuDialog tenMenu = new TenantMenuDialog(ref t);
+                if (tenMenu.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        public void ChangePassword()
+        {
+            PasswordDialog passDialog = new PasswordDialog();
+            if (passDialog.ShowDialog() == DialogResult.OK)
+            {
+                Password = passDialog.Password;
+            }
+        }
+
+        public bool RetrieveRegisteredUser(string code, out Tenant t)
+        {
+            t = _tenantList.Find(te => (code == te.AccessCode));
+
+            if (t != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool VerifyPassword(string attempt)
+        {
+            return attempt == Password;
+        }
+
+        public void Save()
+        {
+            FileStream f = new FileStream("data.stn", FileMode.Create, FileAccess.Write);
+            BinaryFormatter bin = new BinaryFormatter();
+            bin.Serialize(f, _tenantList);
+            f.Close();
+        }
+
+        public void Restore()
+        {
+            FileStream f = new FileStream("data.stn", FileMode.OpenOrCreate, FileAccess.Read);
+            BinaryFormatter bin = new BinaryFormatter();
+            _tenantList = (List<Tenant>)bin.Deserialize(f);
+            f.Close();
+        }
+
+        public string Password
+        {
+            private get
+            {
+                return _password;
+            }
+            set
+            {
+                this._password = value;
+            }
+        }
+    }
+}

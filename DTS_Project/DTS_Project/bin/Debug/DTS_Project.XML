@@ -1,0 +1,1001 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DTS_Project</name>
+    </assembly>
+    <members>
+        <member name="T:DTS_Project.ListDialog">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: A multipurpose list-box.
+            Used to list calls, barred numbers, tenants, etc.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.ListDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.ListDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DTS_Project.ListDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.ListDialog.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.ListDialog.AddDisplayItems(System.Object[])">
+            <summary>
+            Populate the list area with string representations of objects.
+            </summary>
+            <param name="objects">The objects to add.</param>
+        </member>
+        <member name="M:DTS_Project.ListDialog.ClearDisplayItems">
+            <summary>
+            Remove all objects of the list area.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.ConnectedDialog">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Class representing the form
+            of ConnectedDialog. Visual feedback that
+            a call is being placed.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.ConnectedDialog.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.ConnectedDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.ConnectedDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DTS_Project.ConnectedDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.LocateTenantDialog">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Class representing the form
+            of LocateTenantDialog. By entering the first
+            and last names of a tenant, the system will then
+            retrieve the tenant if they exist within the 
+            active tenants list. 
+            </summary>
+        </member>
+        <member name="M:DTS_Project.LocateTenantDialog.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.LocateTenantDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.LocateTenantDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DTS_Project.LocateTenantDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.LocateTenantDialog.FirstName">
+            <summary>
+            Returns the first name entered in the form.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.LocateTenantDialog.LastName">
+            <summary>
+            Returns the last name entered in the form.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.InputTenatDialog">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Class representing the form
+            of InputTenatDialog. For entry of a single
+            Tenant into the system's list of active Tenants.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.InputTenatDialog.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.InputTenatDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.InputTenatDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DTS_Project.InputTenatDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.InputTenatDialog.FirstName">
+            <summary>
+            Returns the first name entered in the form.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.InputTenatDialog.LastName">
+            <summary>
+            Returns the last name entered in the form.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.InputTenatDialog.AccessCode">
+            <summary>
+            Returns the access code entered in the form.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.DTS">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: The Domestic Telephone System. Creates
+            a terminal and a telephone for access by the administrator
+            and tenant(s), respectively.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.DTS._terminal">
+            <summary>
+            The Domestic Telephone System's terminal.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.DTS._telephone">
+            <summary>
+            The Domestic Telephone Sytem's telephone.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.DTS.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.DTS.DTS_Load(System.Object,System.EventArgs)">
+            <summary>
+            Form load initialization.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.DTS.btnTerminal_Click(System.Object,System.EventArgs)">
+            <summary>
+            When the user clicks on the terminal button, activate the terminal.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.DTS.btnTelephone_Click(System.Object,System.EventArgs)">
+            <summary>
+            When the user clicks on the telephone button, activate the telephone.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.DTS.btnQuit_Click(System.Object,System.EventArgs)">
+            <summary>
+            When the user clicks on the quit button, exit.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:DTS_Project.DTS.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.DTS.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DTS_Project.DTS.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.Tenant">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: A tenant to the system. 
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Tenant._accessCode">
+            <summary>
+            The tenant's access code.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Tenant._first">
+            <summary>
+            The tenant's first name.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Tenant._last">
+            <summary>
+            The tenant's last name.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Tenant._callLog">
+            <summary>
+            The tenant's call log.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Tenant._barredList">
+            <summary>
+            The tenant's barred number list.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Tenant.sb">
+            <summary>
+            A string builder used to generate a string
+            representation of a tenant.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Tenant.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Non-default constructor.
+            </summary>
+            <param name="code">The access code.</param>
+            <param name="first">The first name of the tenant.</param>
+            <param name="last">The last name of the tenant.</param>
+        </member>
+        <member name="M:DTS_Project.Tenant.ListCalls">
+            <summary>
+            Display all of the calls made by this tenant.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Tenant.ListBarred">
+            <summary>
+            Display all of the barred numbers to this tenant.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Tenant.IsNotBarred(DTS_Project.Number)">
+            <summary>
+            Verify that a number is not barred.
+            </summary>
+            <param name="number">The number to check.</param>
+            <returns>True if not barred, false if otherwise.</returns>
+        </member>
+        <member name="M:DTS_Project.Tenant.MakeBarred(DTS_Project.Bar)">
+            <summary>
+            Add a number to the barred list.
+            </summary>
+            <param name="barred">The barred number to add.</param>
+        </member>
+        <member name="M:DTS_Project.Tenant.Unbar(DTS_Project.Number)">
+            <summary>
+            Unbar a certain number. 
+            </summary>
+            <param name="number">The number to unbar.</param>
+        </member>
+        <member name="M:DTS_Project.Tenant.ClearCallLog">
+            <summary>
+            Remove the calls from the tenant's call log.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Tenant.UpdateCallLog(DTS_Project.Call)">
+            <summary>
+            Add a call to the call log.
+            </summary>
+            <param name="call">The call to add.</param>
+        </member>
+        <member name="M:DTS_Project.Tenant.ToString">
+            <summary>
+            ToString override.
+            </summary>
+            <returns>A string representation of a tenant.</returns>
+        </member>
+        <member name="P:DTS_Project.Tenant.AccessCode">
+            <summary>
+            Returns the access code.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.Tenant.First">
+            <summary>
+            Returns the tenant's first name.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.Tenant.Last">
+            <summary>
+            Returns the tenant's last name.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.Bar">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Class representing a
+            barred number (generalization). Can be inherited. 
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Bar.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Bar.CheckBar(DTS_Project.Number)">
+            <summary>
+            Virtual method to be overridden by children classes.
+            </summary>
+            <param name="number">A number.</param>
+            <returns>True if the number is barred. False otherwise.</returns>
+        </member>
+        <member name="T:DTS_Project.AreaCodeDialog">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Class representing the form
+            of AreaCodeDialog. For entry of an area
+            code.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.AreaCodeDialog.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.AreaCodeDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.AreaCodeDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DTS_Project.AreaCodeDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.AreaCodeDialog.AreaCode">
+            <summary>
+            Returns the area code entered into the form.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.BarFullNumber">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Class representing an
+            entire barred number. 
+            </summary>
+        </member>
+        <member name="F:DTS_Project.BarFullNumber._number">
+            <summary>
+            A number stored by this barred number.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.BarFullNumber.#ctor(DTS_Project.Number)">
+            <summary>
+            Non-default constructor.
+            </summary>
+            <param name="number">A full number.</param>
+        </member>
+        <member name="M:DTS_Project.BarFullNumber.ToString">
+            <summary>
+            ToString override.
+            </summary>
+            <returns>A string representation of this barred number.</returns>
+        </member>
+        <member name="M:DTS_Project.BarFullNumber.CheckBar(DTS_Project.Number)">
+            <summary>
+            Checks whether the full number has been barred or not.
+            </summary>
+            <param name="number">An entire number.</param>
+            <returns>True if barred, false if otherwise.</returns>
+        </member>
+        <member name="T:DTS_Project.PasswordDialog">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Class representing the form
+            of PasswordDialog. Accepts entry of a password
+            from the system administrator. Also used to update
+            the system's password.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.PasswordDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.PasswordDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DTS_Project.PasswordDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.PasswordDialog.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.PasswordDialog.Clean">
+            <summary>
+            Small method to help clean up during the terminal
+            log-on process. 
+            </summary>
+        </member>
+        <member name="P:DTS_Project.PasswordDialog.Password">
+            <summary>
+            Returns the password entered into the form.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.Call">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Class representing a single
+            call made by a Tenant.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Call._dialed">
+            <summary>
+            The number dialed.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Call._placed">
+            <summary>
+            The time placed.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Call._ended">
+            <summary>
+            The time ended.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Call.sb">
+            <summary>
+            A string builder used to generate the string representation
+            of a call.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Call.#ctor(DTS_Project.Number,System.DateTime,System.DateTime)">
+            <summary>
+            Non-default constructor.
+            </summary>
+            <param name="dialed">The number dialed.</param>
+            <param name="placed">The (full) time the call was placed.</param>
+            <param name="ended">The (full) time the call ended.</param>
+        </member>
+        <member name="M:DTS_Project.Call.ToString">
+            <summary>
+            ToString override.
+            </summary>
+            <returns>A string representing a single call placed by a tenant.</returns>
+        </member>
+        <member name="P:DTS_Project.Call.Dialed">
+            <summary>
+            Returning the number dialed from a call.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.TenantMenuDialog">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Tenant level operations for the
+            administrator. 
+            </summary>
+        </member>
+        <member name="F:DTS_Project.TenantMenuDialog._tenant">
+            <summary>
+            The tenant that will be worked upon.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.TenantMenuDialog.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.TenantMenuDialog.#ctor(DTS_Project.Tenant@)">
+            <summary>
+            Overloaded constructor. 
+            </summary>
+            <param name="tenant">A tenant to work upon.</param>
+        </member>
+        <member name="M:DTS_Project.TenantMenuDialog.btnBarAreaCode_Click(System.Object,System.EventArgs)">
+            <summary>
+            Bar a particular area code to the working tenant.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.TenantMenuDialog.btnBarNumber_Click(System.Object,System.EventArgs)">
+            <summary>
+            Bar a particular number to the working tenant.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.TenantMenuDialog.btnUnbarArea_Click(System.Object,System.EventArgs)">
+            <summary>
+            Unbar a particular area code to the working tenant.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.TenantMenuDialog.btnUnbarNumber_Click(System.Object,System.EventArgs)">
+            <summary>
+            Unbar a particular number to the working tenant.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.TenantMenuDialog.btnListBar_Click(System.Object,System.EventArgs)">
+            <summary>
+            List all of a tenant's barred numbers.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.TenantMenuDialog.btnListCalls_Click(System.Object,System.EventArgs)">
+            <summary>
+            List all of a tenant's placed calls.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.TenantMenuDialog.btnClearCalls_Click(System.Object,System.EventArgs)">
+            <summary>
+            Clear a tenant's call log.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:DTS_Project.TenantMenuDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.TenantMenuDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DTS_Project.TenantMenuDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.Terminal">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: The terminal is how the administrator
+            performs various operations on his tenants. 
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Terminal._password">
+            <summary>
+            The system password.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Terminal._tenantList">
+            <summary>
+            The list of tenants that will be maintained by the system.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Terminal.#ctor(System.String)">
+            <summary>
+            Non-default constructor.
+            </summary>
+            <param name="password">The password (default is "ksu").</param>
+        </member>
+        <member name="M:DTS_Project.Terminal.Activate">
+            <summary>
+            When you click on the terminal button, prompt for a password.
+            Should the password be correct, open the main menu.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Terminal.Add">
+            <summary>
+            Add a tenant.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Terminal.Delete">
+            <summary>
+            Delete a tenant.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Terminal.List">
+            <summary>
+            List all of the tenants.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Terminal.WorkOn">
+            <summary>
+            Work on a particular tenant.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Terminal.ChangePassword">
+            <summary>
+            Change the password to the system.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Terminal.RetrieveRegisteredUser(System.String,DTS_Project.Tenant@)">
+            <summary>
+            Retrieve a tenant based on their registration code.
+            </summary>
+            <param name="code">An access code.</param>
+            <param name="t">An out parameter for a tenant.</param>
+            <returns>True if the tenant is found, false otherwise.</returns>
+        </member>
+        <member name="M:DTS_Project.Terminal.VerifyPassword(System.String)">
+            <summary>
+            Verify the attempted password.
+            </summary>
+            <param name="attempt">The attempt.</param>
+            <returns>True if password is correct, false otherwise.</returns>
+        </member>
+        <member name="M:DTS_Project.Terminal.Save">
+            <summary>
+            Serialize the tenant list for storage.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Terminal.Restore">
+            <summary>
+            Deserialize the tenant list for restoration.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.Terminal.Password">
+            <summary>
+            Get/Set the password to the system.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.AccessCodeDialog">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Class representing the form
+            of AccessCodeDialog. For entry of an access
+            code.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.AccessCodeDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.AccessCodeDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DTS_Project.AccessCodeDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.AccessCodeDialog.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.AccessCodeDialog.AccessCode">
+            <summary>
+            Returns the access code typed into the form.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.TelephoneDialog">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: This is the form used to 
+            represent the telephone. Accepts a dialed
+            number.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.TelephoneDialog.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.TelephoneDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.TelephoneDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DTS_Project.TelephoneDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.TelephoneDialog.TelephoneNumber">
+            <summary>
+            Returns the number dialed as an array of strings.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.Number">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Class representing a number
+            dialed by a given tenant. 
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Number._areaCode">
+            <summary>
+            The area code of the number.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Number._exchange">
+            <summary>
+            The number's exchange.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Number._subscriber">
+            <summary>
+            The subscriber section of the number.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Number.sb">
+            <summary>
+            String builder used to generate a string 
+            representation of this number.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Number.#ctor(System.String[])">
+            <summary>
+            Non-default constructor.
+            </summary>
+            <param name="number">An array of strings used to 
+            construct a number.</param>
+        </member>
+        <member name="M:DTS_Project.Number.ToString">
+            <summary>
+            ToString override.
+            </summary>
+            <returns>A string representation of a number.</returns>
+        </member>
+        <member name="P:DTS_Project.Number.AreaCode">
+            <summary>
+            Returns the area code.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.Number.Exchange">
+            <summary>
+            Returns the exchange.
+            </summary>
+        </member>
+        <member name="P:DTS_Project.Number.Subscriber">
+            <summary>
+            Returns the subscriber section.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.Telephone">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: The telephone is used by the 
+            tenant. Each tenant must enter their access code before
+            given use of the telephone. After it has been determined
+            they are a valid user, the system will prompt them
+            for a telephone number, make sure the number isn't barred, and
+            then proceed to log the call.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.Telephone._workingTenant">
+            <summary>
+            Tenant that is currently using the telephone.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Telephone.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.Telephone.Activate(DTS_Project.Terminal@)">
+            <summary>
+            Activate the telephone. Use the parameter to access the user.
+            </summary>
+            <param name="_terminal">The DTS terminal.</param>
+        </member>
+        <member name="T:DTS_Project.MainMenuDialog">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: The main menu for the administrator.
+            Can perform various functions to update the system
+            password, maintain tenants, etc.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.MainMenuDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.MainMenuDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DTS_Project.MainMenuDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:DTS_Project.MainMenuDialog._terminal">
+            <summary>
+            The terminal used by the DTS.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.MainMenuDialog.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.MainMenuDialog.#ctor(DTS_Project.Terminal)">
+            <summary>
+            Overloaded constructor. Calls the base.
+            </summary>
+            <param name="terminal">The DTS terminal.</param>
+        </member>
+        <member name="M:DTS_Project.MainMenuDialog.btnAddTenant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Add a tenant to the system.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.MainMenuDialog.btnDeleteTenant_Click(System.Object,System.EventArgs)">
+            <summary>
+            Delete a tenant from the system.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.MainMenuDialog.btnListTenants_Click(System.Object,System.EventArgs)">
+            <summary>
+            List all the tenants on the system.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.MainMenuDialog.btnWorkOn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Do work on a tenant.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.MainMenuDialog.btnChangePassword_Click(System.Object,System.EventArgs)">
+            <summary>
+            Change the system password.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.MainMenuDialog.btnSave_Click(System.Object,System.EventArgs)">
+            <summary>
+            Serialize the tenant list for storage.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.MainMenuDialog.btnRestore_Click(System.Object,System.EventArgs)">
+            <summary>
+            Deserialize the tenant list for restoration.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DTS_Project.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:DTS_Project.BarArea">
+            <summary>
+            Created: Mar 31, 2013 by Tyler Vanover
+            
+            Description: Class representing a barred
+            area code. 
+            </summary>
+        </member>
+        <member name="F:DTS_Project.BarArea._number">
+            <summary>
+            The area code this barred number will store. For simplicity
+            we will accept the full number.
+            </summary>
+        </member>
+        <member name="M:DTS_Project.BarArea.#ctor(DTS_Project.Number)">
+            <summary>
+            Non-default constructor.
+            </summary>
+            <param name="number">A number.</param>
+        </member>
+        <member name="M:DTS_Project.BarArea.ToString">
+            <summary>
+            ToString override. 
+            </summary>
+            <returns>The string representation of a barred area code</returns>
+        </member>
+        <member name="M:DTS_Project.BarArea.CheckBar(DTS_Project.Number)">
+            <summary>
+            Checks whether the area code is barred or not.
+            </summary>
+            <param name="number">Number to check.</param>
+            <returns>True if barred, false otherwise.</returns>
+        </member>
+    </members>
+</doc>

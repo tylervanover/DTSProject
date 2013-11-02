@@ -1,0 +1,117 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DTS_Project
+{
+    [Serializable]
+    public class Tenant
+    {
+        private string _accessCode;
+        private string _first;
+        private string _last;
+        private List<Call> _callLog;
+        private List<Bar> _barredList;
+        private StringBuilder sb;
+
+        public Tenant(string code, string first, string last)
+        {
+            _accessCode = code;
+            _first = first;
+            _last = last;
+            _callLog = new List<Call>();
+            _barredList = new List<Bar>();
+            sb = new StringBuilder();
+        }
+
+        public void ListCalls()
+        {
+            ListDialog listDiag = new ListDialog();
+            listDiag.AddDisplayItems(_callLog.ToArray());
+            listDiag.ShowDialog();
+        }
+
+        public void ListBarred()
+        {
+            ListDialog listDiag = new ListDialog();
+            listDiag.AddDisplayItems(_barredList.ToArray());
+            listDiag.ShowDialog();
+        }
+
+        public bool IsNotBarred(Number number)
+        {
+            Bar bar = null;
+            //Check if number is barred
+            foreach (Bar b in _barredList)
+            {
+                if (b.CheckBar(number))
+                {
+                    bar = b;
+                }
+            }
+            return bar == null;
+        }
+
+        public void MakeBarred(Bar barred)
+        {
+            _barredList.Add(barred);
+        }
+
+        public void Unbar(Number number)
+        {
+            Bar b = _barredList.Find(be => (be.CheckBar(number) == true));
+            if (b != null)
+            {
+                _barredList.Remove(b);
+            }
+        }
+
+        public void ClearCallLog()
+        {
+            _callLog.Clear();
+        }
+
+        public void UpdateCallLog(Call call)
+        {
+            //Add call to call log
+            _callLog.Add(call);
+        }
+
+        public override string ToString()
+        {
+            //Reset the builder
+            sb.Clear();
+
+            sb.Append(First); sb.Append(" ");
+            sb.Append(Last); sb.Append(" : ");
+            sb.Append(AccessCode);
+
+            return sb.ToString();
+        }
+
+        public string AccessCode
+        {
+            get
+            {
+                return _accessCode;
+            }
+        }
+
+        public string First
+        {
+            get
+            {
+                return _first;
+            }
+        }
+
+        public string Last
+        {
+            get
+            {
+                return _last;
+            }
+        }
+    }
+}

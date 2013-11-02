@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace DTS_Project
+{
+    public class Telephone
+    {
+        private Tenant _workingTenant;
+
+        public Telephone()
+        {
+        }
+
+        public void Activate(ref Terminal _terminal)
+        {
+            AccessCodeDialog accessDiag = new AccessCodeDialog();
+            if (accessDiag.ShowDialog() == DialogResult.OK)
+            {
+                if (_terminal.RetrieveRegisteredUser(accessDiag.AccessCode, out _workingTenant))
+                {
+                    TelephoneDialog telly = new TelephoneDialog();
+                    if (telly.ShowDialog() == DialogResult.OK)
+                    {
+
+                    }
+                }
+            }
+        }
+    }
+}
